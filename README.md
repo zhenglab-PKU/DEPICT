@@ -5,16 +5,17 @@ DEPICT (Drug Efficacy Prediction via Integrated ConText), a sample-centric deep 
 ### Requirements
 
 - Python >= 3.10
-- PyTorch >= 2.5.0
+- PyTorch 2.5.0 with CUDA 12.4 support
 
 Create environment:
 
 ```bash
-conda create -n DEPICT python=3.10
-conda activate DEPICT
+conda create -n depict python=3.10
+conda activate depict
 ```
 
 ```bash
+pip install torch==2.5.0 --index-url https://download.pytorch.org/whl/cu124
 pip install -r requirements.txt
 ```
 
@@ -32,7 +33,7 @@ unzip data.zip -d ./data
 
 ## Model Training
 
-DEPICT can be trained from scratch using the following command:
+DEPICT can be retrained from scratch using:
 
 ```bash
 python main.py --mode retrain --input exp --loss Hierarchical --yaml default.yaml
@@ -61,13 +62,13 @@ The trained model will be saved automatically:
 The pretrained model weights used to reproduce the results reported in the manuscript are available at:
 
 https://doi.org/10.6084/m9.figshare.33058595
-Download: model_save.zip
 
-and extract it into the project directory:
+Download `model_save.zip` and extract it into the project directory:
 
 ```bash
 unzip model_save.zip -d ./model_save
 ```
+
 ### Run Inference
 
 Inference can be performed using the provided pretrained model or a newly trained model.
@@ -78,13 +79,13 @@ python main.py --mode inference --input exp --loss Hierarchical --yaml inference
 
 ### Inference Arguments
 
-The input and loss type should be consistent with the training setting.
+The `--input` and `--loss` settings should match those used during training.
 
---yaml: Inference configuration file:The file can be modified to specify:- model checkpoint pat- inference dataset path- inference parameters
+`--yaml`: Specifies the inference configuration file. The file can be modified to specify the inference dataset path, model checkpoint path, and other inference-related parameters.
 
 ### Output
 
-The reasoning results will be saved in
+The prediction results will be saved in:
 
 ```
 ./results/<training_time>_inference_results.csv
