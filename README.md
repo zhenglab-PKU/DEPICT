@@ -54,7 +54,7 @@ python main.py --mode retrain --input exp --loss Hierarchical --yaml default.yam
 The trained model will be saved automatically:
 
 ```
-./model_save/<training_time>/best.pt
+./model_save/<training_time>/best_model.pt
 ```
 
 ## Model Inference
