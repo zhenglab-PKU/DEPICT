@@ -14,20 +14,19 @@ Create environment:
 ```bash
 conda create -n DEPICT python=3.10
 conda activate DEPICT
+```
 
+```
 pip install -r requirements.txt
+```
 
 # Data Download
 
 The raw training data and the gene expression and mutation data used for inference in the manuscript are available at:
 
 https://doi.org/10.6084/m9.figshare.33058595
+Download: data.zip
 
-Download:
-
-```
-data.zip
-```
 
 and extract it into the project directory:
 
@@ -43,68 +42,25 @@ DEPICT can be trained from scratch using the following command:
 python main.py --mode retrain --input exp --loss Hierarchical --yaml default.yaml
 ```
 
-
 ## Training Arguments
-
 
 ### --input
 
 Specifies the molecular features used for training.
 
 Available options:
-
-```
-exp
-```
-
-Use gene expression data only.
-
-
-```
-all
-```
-
-Use integrated gene expression and mutation data.
-
-
-Example:
-
-```bash
-python main.py --mode retrain --input all --loss Hierarchical --yaml default.yaml
-```
-
+exp: Use gene expression data only.
+all: Use integrated gene expression and mutation data.
 
 ### --loss
 
 Specifies the loss function used for model optimization.
-
-Example:
-
-```bash
---loss Hierarchical
-```
-
 Different loss functions can be selected according to experimental requirements.
-
 
 ### --yaml
 
 Specifies the training configuration file.
-
-Default configuration:
-
-```
-configs/default.yaml
-```
-
-The file can be modified to change training hyperparameters, including:
-
-- learning rate
-- batch size
-- number of epochs
-- model parameters
-- optimization settings
-
+The file can be modified to change training hyperparameters.
 
 # Training Output
 
@@ -114,16 +70,6 @@ The trained model will be saved automatically:
 ./model_save/<training_time>/best.pt
 ```
 
-
-Example:
-
-```
-model_save/
-└── 20260101_120000/
-    └── best.pt
-```
-
-
 # Model Inference
 
 ## Pretrained Model
@@ -131,73 +77,24 @@ model_save/
 The pretrained model weights used to reproduce the results reported in the manuscript are available at:
 
 https://doi.org/10.6084/m9.figshare.33058595
-
-
-Download:
-
-```
-model_save.zip
-```
+Download: model_save.zip
 
 and extract:
 
 ```bash
 unzip model_save.zip -d ./model_save
 ```
-
-
-The expected structure:
-
-```
-DEPICT/
-└── model_save/
-    └── <training_time>/
-        └── best.pt
-```
-
-
 ## Run Inference
 
 Inference can be performed using the provided pretrained model or a newly trained model.
-
-Run:
 
 ```bash
 python main.py --mode inference --input exp --loss Hierarchical --yaml inference.yaml
 ```
 
-
 ## Inference Arguments
 
-
-### --input
-
-The input type should be consistent with the training setting.
-
-Gene expression only:
-
-```bash
---input exp
-```
-
-
-Gene expression and mutation:
-
-```bash
---input all
-```
-
-
-### --loss
-
-The loss function should match the training setting.
-
-Example:
-
-```bash
---loss Hierarchical
-```
-
+The input and loss type should be consistent with the training setting.
 
 ### --yaml
 
