@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 The raw training data and the gene expression and mutation data used for inference in the manuscript are available at:
 
-https://doi.org/10.6084/m9.figshare.33058595
+https://doi.org/10.6084/m9.figshare.33093000
 
 Download `data.zip` and extract it into the project directory:
 
@@ -104,7 +104,4 @@ The prediction results will be saved in:
 3. The file `./data/drug_select.csv` can be modified to specify the drugs included during model training.
 
 4. The file `./data/inference_drug.csv` can be modified to specify the drugs used for model inference.
-
-5. Examples for single-cell and spatial transcriptomics applications are provided in the Jupyter notebooks available at:
-   https://doi.org/10.6084/m9.figshare.33058595
 
