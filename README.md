@@ -14,7 +14,7 @@ conda create -n DEPICT python=3.10
 conda activate DEPICT
 ```
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -24,9 +24,7 @@ The raw training data and the gene expression and mutation data used for inferen
 
 https://doi.org/10.6084/m9.figshare.33058595
 
-Download: data.zip
-
-and extract it into the project directory:
+Download `data.zip` and extract it into the project directory:
 
 ```bash
 unzip data.zip -d ./data
@@ -42,15 +40,11 @@ python main.py --mode retrain --input exp --loss Hierarchical --yaml default.yam
 
 ### Training Arguments
 
---input: Specifies the molecular features used for training.
+`--input`: Specifies the molecular features used for training. Use `exp` for gene expression data only, or use `all` for integrated gene expression and mutation data.
 
-Available options:
-exp: Use gene expression data only.
-all: Use integrated gene expression and mutation data.
+`--loss`: Specifies the loss function used for model optimization. Different loss functions can be selected according to experimental requirements.
 
---loss: Specifies the loss function used for model optimization. Different loss functions can be selected according to experimental requirements.
-
---yaml: Specifies the training configuration file. The file can be modified to change training hyperparameters.
+`--yaml`: Specifies the training configuration file. The file can be modified to change training hyperparameters.
 
 ## Training Output
 
