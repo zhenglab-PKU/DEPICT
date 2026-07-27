@@ -47,6 +47,8 @@ python main.py --mode retrain --input exp --loss Hierarchical --yaml default.yam
 
 `--yaml`: Specifies the training configuration file. The file can be modified to change training hyperparameters.
 
+`--fold`: Specifies the training strategy. Set to `-1` to perform five-fold cross-validation using folds 1–5. Set to `6` to train the final model using the entire dataset without cross-validation or an independent test set.
+
 ## Training Output
 
 The trained model will be saved automatically:
@@ -90,4 +92,19 @@ The prediction results will be saved in:
 ```
 ./results/<training_time>_inference_results.csv
 ```
+
+## additional notes
+
+1. The script `./data/create_fold_data.py` is used to generate five-fold cross-validation splits from the cell line training dataset.
+
+2. The formats of gene expression and mutation input files are illustrated in:
+   - `./data/ccle_tpm.csv` (gene expression data)
+   - `./data/ccle_mut.csv` (mutation data)
+
+3. The file `./data/drug_select.csv` can be modified to specify the drugs included during model training.
+
+4. The file `./data/inference_drug.csv` can be modified to specify the drugs used for model inference.
+
+5. Examples for single-cell and spatial transcriptomics applications are provided in the Jupyter notebooks available at:
+   https://doi.org/10.6084/m9.figshare.33058595
 
