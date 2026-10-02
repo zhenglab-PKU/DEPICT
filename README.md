@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 ## Data Download
 
-The raw training data and the gene expression and mutation data used for inference in the manuscript are available at:
+The training datasets, processed datasets, and external validation datasets used in this study are available from Figshare:
 
 https://doi.org/10.6084/m9.figshare.33093000
 
@@ -93,7 +93,7 @@ The prediction results will be saved in:
 ./results/<training_time>_inference_results.csv
 ```
 
-## demo
+## Demo
 We provide two example notebooks to demonstrate the application of DEPICT to different types of transcriptomic data.
 
 ### Spatial transcriptomics
@@ -108,7 +108,7 @@ This notebook demonstrates the application of DEPICT to spatial transcriptomics 
 
 This notebook demonstrates the application of DEPICT to single-cell RNA-sequencing data from an A375 cell line-derived dataset.
 
-## additional notes
+## Additional notes
 
 1. The script `./data/create_fold_data.py` is used to generate five-fold cross-validation splits from the cell line training dataset.
 
