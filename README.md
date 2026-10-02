@@ -49,7 +49,7 @@ python main.py --mode retrain --input exp --loss Hierarchical --yaml default.yam
 
 `--fold`: Specifies the training strategy. Set to `-1` to perform five-fold cross-validation using folds 1–5. Set to `6` to train the final model using the entire dataset without cross-validation or an independent test set.
 
-## Training Output
+### Training Output
 
 The trained model will be saved automatically:
 
