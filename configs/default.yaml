@@ -1,0 +1,41 @@
+#global setting
+seed: 42
+kfold: 5
+
+# data file
+exp_file: 'ccle_tpm.csv'
+exp_select_file: 'ccle_tpm_select.csv'
+
+mut_file: 'ccle_mut.csv'
+mut_select_file: 'ccle_mut_select.csv'
+
+drug_info_file: 'drug_info.csv'
+drug_response_file: 'drug_response.csv'
+drug_select_file: 'drug_select.csv'
+
+# datasets setting
+# percentile
+sensitivity_cutoff: 80
+sampling_neg: True
+
+# training setting
+num_epochs: 100
+batch_size: 32
+learning_rate: 0.0005
+weight_decay: 0.0001
+early_stop_patience: 10
+save_epoch_strat: 30
+
+# loss
+alpha: 0.5
+margin: 0.5
+
+# metrics at k
+k: 10
+
+#model setting MLP
+hidden_dim_list: [512,256]
+output_dim: 128
+interaction_dim: 64
+dropout: 0.5
+act_fn: 'relu'
