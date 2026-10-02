@@ -96,19 +96,17 @@ The prediction results will be saved in:
 ## demo
 We provide two example notebooks to demonstrate the application of DEPICT to different types of transcriptomic data.
 
-Spatial transcriptomics
+### Spatial transcriptomics
 
 `Spatial_demo_P7-2_LUAD.ipynb`
 
 This notebook demonstrates the application of DEPICT to spatial transcriptomics data from a lung adenocarcinoma (LUAD) sample.
 
-Single-cell RNA sequencing
+### Single-cell RNA sequencing
 
 `scRNAseq_demo_A375.ipynb`
 
 This notebook demonstrates the application of DEPICT to single-cell RNA-sequencing data from an A375 cell line-derived dataset.
-
-
 
 ## additional notes
 
